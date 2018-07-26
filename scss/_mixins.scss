@@ -1,0 +1,28 @@
+@mixin easeOut {
+  transition: all 0.5s ease-out;
+}
+
+@mixin bg-overlay {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($primary-color, $bg-opacity);
+  z-index: -1;
+}
+
+@mixin background {
+  @if $show-bg-image {
+    &#bg-img {
+      background: $bg-image;
+      background-attachment: fixed;
+      background-size: cover;
+
+      &:after {
+        @include bg-overlay();
+      }
+    }
+  }
+}
