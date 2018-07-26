@@ -1,5 +1,6 @@
-@import 'config.scss';
-@import 'mixins.scss';
+@import 'config';
+@import 'mixins';
+@import 'menu';
 
 html {
   font-size: 10px;
@@ -10,7 +11,7 @@ html {
 }
 
 body {
-  @include background();
+  @include background;
   margin: 0;
   height: 100%;
   background-color: $primary-color;
@@ -61,7 +62,7 @@ main {
 
       &:hover {
         color: $secondary-color;
-        @include easeOut();
+        @include easeOut;
       }
     }
   }

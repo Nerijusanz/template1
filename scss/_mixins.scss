@@ -21,7 +21,7 @@
       background-size: cover;
 
       &:after {
-        @include bg-overlay();
+        @include bg-overlay;
       }
     }
   }
