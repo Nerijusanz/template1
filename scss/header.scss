@@ -1,0 +1,158 @@
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+
+  .menu-btn {
+    position: absolute;
+    z-index: 3;
+    right: 35px;
+    top: 35px;
+    cursor: pointer;
+    @include easeOut;
+
+    .btn-line {
+      width: 28px;
+      height: 3px;
+      margin: 0 0 5px 0;
+      background: #fff;
+      @include easeOut;
+    }
+
+    &.close {
+      transform: rotate(180deg);
+
+      .btn-line {
+        //line 1 - rotate;
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+        //line 2 - hide;
+        &:nth-child(2) {
+          //display: none;
+          visibility: hidden;
+          opacity: 0;
+        }
+        //line 3 - rotate;
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(6px, -6px);
+        }
+      }
+    }
+  }
+
+  //menu overlay
+  .menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    //opacity: 0.9;
+    background: darken($primary-color, 5);
+    visibility: hidden;
+
+    &.show {
+      visibility: visible;
+    }
+
+    &-branding,
+    &-nav {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+      float: left;
+      width: 50%;
+      height: 100vh;
+
+      overflow: hidden;
+    }
+
+    &-branding {
+      background: $primary-color;
+
+      .portrait {
+        border-radius: 50%;
+        border: 3px solid $secondary-color;
+      }
+    }
+
+    &-nav {
+      background: darken($primary-color, 5);
+    }
+
+    div.menu-branding {
+      transform: translateY(100%) !important;
+      @include easeOut;
+
+      &.show {
+        transform: translate(0) !important;
+      }
+    }
+
+    div.menu-nav {
+      transform: translateY(-100%) !important;
+      @include easeOut;
+
+      ul.menu-list {
+        text-align: center;
+        min-width: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        .nav-item {
+          position: relative;
+          left: -100% !important;
+          @include easeOut;
+
+          .nav-link {
+            display: inline-block;
+            position: relative;
+            font-size: 3rem;
+            text-transform: uppercase;
+            padding: 1rem 0;
+            font-weight: 300;
+            color: #fff;
+            text-decoration: none;
+            @include easeOut;
+
+            &:hover {
+              color: $secondary-color;
+            }
+          }
+
+          &.show {
+            left: 0 !important;
+            /*
+            note:ADDED TO trasition-delay into js
+            &:nth-child(1) {
+              transition-delay: 0.2s;
+            }
+            &:nth-child(2) {
+              transition-delay: 0.4s;
+            }
+            &:nth-child(3) {
+              transition-delay: 0.6s;
+            }
+            &:nth-child(4) {
+              transition-delay: 0.8s;
+            }*/
+          }
+        }
+      }
+
+      &.show {
+        transform: translateY(0) !important;
+      }
+    }
+  }
+} //end header end
+
+//nav-item delay
+/*@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.5s;
+  }
+}*/

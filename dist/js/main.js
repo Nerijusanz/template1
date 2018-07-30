@@ -2,7 +2,7 @@ const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.menu');
 const menuBranding = document.querySelector('.menu-branding');
 const menuNav = document.querySelector('.menu-nav');
-const navItems = document.querySelectorAll('.nav-item');
+const navItems = document.querySelectorAll('.nav-item'); //note: querySelectorAll();
 
 let showMenuState = false;
 
@@ -11,8 +11,8 @@ menuBtn.addEventListener('click', toggleMenu);
 function toggleMenu() {
   if (!showMenuState) {
     menuBtn.classList.add('close');
-    menu.classList.add('show');
     menuBranding.classList.add('show');
+    menu.classList.add('show');
     menuNav.classList.add('show');
 
     navItems.forEach(item => item.classList.add('show'));
@@ -20,8 +20,8 @@ function toggleMenu() {
     showMenuState = true;
   } else {
     menuBtn.classList.remove('close');
-    menu.classList.remove('show');
     menuBranding.classList.remove('show');
+    menu.classList.remove('show');
     menuNav.classList.remove('show');
 
     navItems.forEach(item => item.classList.remove('show'));
@@ -29,3 +29,12 @@ function toggleMenu() {
     showMenuState = false;
   }
 }
+
+$(document).ready(function() {
+  let navItems = $('.nav-item');
+
+  navItems.each(function(index, item) {
+    let delay_time = index * 0.2 + 's';
+    $(item).css({ 'transition-delay': delay_time });
+  });
+});

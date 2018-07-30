@@ -1,0 +1,52 @@
+@include mediaXs {
+  .menu {
+    height: 100vh;
+
+    div.menu-nav,
+    div.menu-branding {
+      display: block;
+      padding: 1rem;
+      width: 100%;
+      height: auto;
+    }
+
+    .menu-branding {
+      height: 25vh;
+    }
+
+    div.menu-nav {
+      height: 75vh;
+    }
+
+    .menu-branding {
+      .portrait {
+        display: block;
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+
+  header .menu div.menu-nav ul.menu-list .nav-item .nav-link {
+    font-size: 2rem;
+  }
+}
+
+@include mediaSm {
+  main {
+    align-items: center;
+    text-align: center;
+    //margin-top: 10vh;
+  }
+
+  .lg-heading {
+    margin-bottom: 1rem;
+  }
+}
+
+@include mediaMd {
+}
+
+@include mediaXl {
+}
