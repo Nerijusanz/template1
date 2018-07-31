@@ -2,6 +2,7 @@ const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector('.menu');
 const menuBranding = document.querySelector('.menu-branding');
 const menuNav = document.querySelector('.menu-nav');
+const menuList = document.querySelector('.menu-list');
 const navItems = document.querySelectorAll('.nav-item'); //note: querySelectorAll();
 
 let showMenuState = false;
@@ -14,6 +15,7 @@ function toggleMenu() {
     menuBranding.classList.add('show');
     menu.classList.add('show');
     menuNav.classList.add('show');
+    menuList.classList.add('show');
 
     navItems.forEach(item => item.classList.add('show'));
 
@@ -23,6 +25,7 @@ function toggleMenu() {
     menuBranding.classList.remove('show');
     menu.classList.remove('show');
     menuNav.classList.remove('show');
+    menuList.classList.remove('show');
 
     navItems.forEach(item => item.classList.remove('show'));
 
@@ -31,10 +34,25 @@ function toggleMenu() {
 }
 
 $(document).ready(function() {
-  let navItems = $('.nav-item');
-
-  navItems.each(function(index, item) {
-    let delay_time = index * 0.2 + 's';
-    $(item).css({ 'transition-delay': delay_time });
+  $('.menu-btn').on('click', function() {
+    animate_menu_items();
   });
 });
+
+function animate_menu_items() {
+  let navItems = $('.nav-item');
+
+  if ($(window).width() < 768) {
+    navItems.each(function(index, item) {
+      $(item).removeAttr('style'); //.css({ transition: 'none' });
+    });
+  }
+
+  if ($(window).width() >= 768) {
+    navItems.each(function(index, item) {
+      let delay_time = (index + 1) * 0.2 + 's';
+
+      $(item).css({ 'transition-delay': delay_time });
+    });
+  }
+}

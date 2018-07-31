@@ -1,6 +1,36 @@
+@function set_text_color($color) {
+  @if (lightness($color) >40) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+//GENERAL COLORS
 $primary-color: #444;
 $secondary-color: #eece1a;
 
+//MAIN BACKGROUND
 $show-bg-image: true;
 $bg-image: url('../img/bg.jpeg');
+
+$bg-color: $primary-color;
 $bg-opacity: 0.3;
+$bg-menu-btn-line-color: set_text_color($bg-color);
+
+//MENU
+$menu-color: $primary-color;
+$menu-bg-color: darken($menu-color, 5);
+
+$menu-btn-line-color: set_text_color($menu-color);
+$menu-btn-line-hover-color: $secondary-color;
+
+$menu-brand-bg-color: $menu-color;
+$menu-brand-portrait-border-color: $secondary-color;
+$menu-brand-portrait-border-style: solid;
+$menu-brand-portrait-border-radius: 50%;
+$menu-brand-portrait-border-thick: 3px;
+
+$menu-nav-bg-color: darken($menu-color, 5);
+$menu-nav-link-color: set_text_color($menu-color);
+$menu-nav-link-hover-color: $secondary-color;

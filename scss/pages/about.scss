@@ -1,0 +1,42 @@
+main#about {
+  .about-content {
+    display: grid;
+    grid-gap: 3rem;
+
+    grid-template-areas:  //grid changes on mediaMd
+      'about-img'
+      'info'
+      'info'
+      'job1'
+      'job2'
+      'job3';
+    grid-template-columns: 1fr;
+
+    .about-img {
+      grid-area: about-img;
+      border-radius: 50%;
+      border: 3px solid $secondary-color;
+    }
+
+    .info {
+      grid-area: info;
+      font-size: 2.4rem;
+    }
+
+    .job {
+      background: lighten($bg-color, 5);
+      padding: 1rem;
+      border-bottom: 5px solid $secondary-color;
+    }
+
+    .job1 {
+      grid-area: job1;
+    }
+    .job2 {
+      grid-area: job2;
+    }
+    .job3 {
+      grid-area: job3;
+    }
+  } //end about-content
+} //end main

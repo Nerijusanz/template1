@@ -5,7 +5,7 @@
   right: 0;
   width: 100%;
   height: 100%;
-  background: rgba($primary-color, $bg-opacity);
+  background: rgba($bg-color, $bg-opacity);
   z-index: -1;
 }
 
@@ -35,8 +35,22 @@ body {
   @include background;
   margin: 0;
   height: 100%;
-  background-color: $primary-color;
+  background-color: $bg-color;
+  color: set_text_color($bg-color);
+}
+
+main {
+  //sticky footer
+  min-height: calc(100vh - 60px); //main height - footer height
+}
+
+#main-footer {
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
   color: #fff;
+  height: 60px;
+  background: darken($bg-color, 10);
 }
 
 h1,
@@ -44,16 +58,6 @@ h2,
 h3 {
   margin: 0;
   font-weight: 400;
-
-  &.lg-heading {
-    font-size: 6rem;
-  }
-
-  &.sm-heading {
-    margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
-    font-size: 2rem;
-  }
 }
 
 a {
@@ -61,6 +65,16 @@ a {
   text-decoration: none;
 }
 
-.text-secondary {
+.lg-heading {
+  font-size: 6rem;
+}
+
+.sm-heading {
+  margin-bottom: 2rem;
+  padding: 0.2rem 1rem;
+  font-size: 2rem;
+}
+
+.title-text-secondary {
   color: $secondary-color;
 }
