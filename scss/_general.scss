@@ -78,3 +78,17 @@ a {
 .title-text-secondary {
   color: $secondary-color;
 }
+
+//MEDIA QUERIES
+@include mediaSm {
+  //mixin.scss
+  main {
+    align-items: center;
+    text-align: center;
+    //margin-top: 10vh;
+  }
+
+  .lg-heading {
+    margin-bottom: 1rem;
+  }
+}
