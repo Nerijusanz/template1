@@ -14,6 +14,7 @@ main#about {
 
     .about-img {
       grid-area: about-img;
+      margin: 0 auto;
       border-radius: 50%;
       border: 3px solid $secondary-color;
     }
@@ -40,3 +41,15 @@ main#about {
     }
   } //end about-content
 } //end main
+
+//media queries
+@include mediaMd {
+  //mixin.scss
+
+  main#about .about-content {
+    grid-template-areas:
+      'about-img info info'
+      'job1 job2 job3';
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
