@@ -1,0 +1,57 @@
+main#projects {
+  .projects-content {
+    display: grid;
+    grid-gap: 2rem;
+
+    grid-template-columns: 1fr;
+
+    .item {
+      img {
+        margin: 0 auto;
+        display: block;
+        border: 3px solid #fff;
+        @include easeOut;
+        &:hover {
+          opacity: 0.5;
+          border-color: $secondary-color;
+        }
+      }
+
+      .btn-group {
+        text-align: center;
+        display: block;
+        width: auto;
+        margin: 0 auto;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border: 0;
+        margin-bottom: 0.3rem;
+        &:hover {
+          background: $secondary-color;
+          color: set_text_color($secondary-color);
+        }
+      }
+
+      .btn-light {
+        @extend .btn;
+        background: lighten($primary-color, 30);
+      }
+      .btn-dark {
+        @extend .btn;
+        background: darken($primary-color, 30);
+      }
+    }
+  }
+}
+
+//media queries
+@include mediaMd {
+  //mixin.scss
+
+  main#projects .projects-content {
+    grid-template-columns: repeat(3, 1fr); //1fr 1fr 1fr
+  }
+}
