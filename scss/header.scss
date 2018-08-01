@@ -144,3 +144,50 @@ header {
   }
 }
 // end header
+
+//MEDIA QUERIES
+@include mediaXs {
+  //mixin.scss
+  .menu {
+    height: 100vh;
+    left: -100% !important;
+    @include easeOut;
+
+    div.menu-nav,
+    div.menu-branding {
+      display: none;
+      padding: 1rem;
+      width: 100%;
+      height: auto;
+    }
+
+    .menu-branding {
+      height: 25vh;
+    }
+
+    div.menu-nav {
+      height: 75vh;
+    }
+
+    .menu-branding {
+      .portrait {
+        display: block;
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    &.show {
+      left: 0 !important;
+      div.menu-nav,
+      div.menu-branding {
+        display: block;
+      }
+    } //end show
+  }
+
+  header .menu div.menu-nav ul.menu-list .nav-item .nav-link {
+    font-size: 2rem;
+  }
+}
