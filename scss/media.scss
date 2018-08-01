@@ -1,71 +1,12 @@
 @include mediaXs {
   //mixin.scss
-  .menu {
-    height: 100vh;
-    left: -100% !important;
-    @include easeOut;
-
-    div.menu-nav,
-    div.menu-branding {
-      display: none;
-      padding: 1rem;
-      width: 100%;
-      height: auto;
-    }
-
-    .menu-branding {
-      height: 25vh;
-    }
-
-    div.menu-nav {
-      height: 75vh;
-    }
-
-    .menu-branding {
-      .portrait {
-        display: block;
-        margin: 0 auto;
-        width: 100px;
-        height: 100px;
-      }
-    }
-
-    &.show {
-      left: 0 !important;
-      div.menu-nav,
-      div.menu-branding {
-        display: block;
-      }
-    } //end show
-  }
-
-  header .menu div.menu-nav ul.menu-list .nav-item .nav-link {
-    font-size: 2rem;
-  }
 }
 
 @include mediaSm {
-  //mixin.scss
-  main {
-    align-items: center;
-    text-align: center;
-    //margin-top: 10vh;
-  }
-
-  .lg-heading {
-    margin-bottom: 1rem;
-  }
 }
 
 @include mediaMd {
   //mixin.scss
-
-  main#about .about-content {
-    grid-template-areas:
-      'about-img info info'
-      'job1 job2 job3';
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }
 
 @include mediaXl {
