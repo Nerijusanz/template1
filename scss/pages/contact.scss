@@ -1,0 +1,49 @@
+main#contact {
+  .contact-content {
+    .box {
+      margin-top: 1rem;
+      padding: 0.8rem;
+      text-align: left;
+      border: 2px solid #fff;
+      overflow: hidden;
+      @include easeOut;
+
+      p {
+        font-size: 1.4rem;
+        margin: 0;
+      }
+      p > span {
+        padding-right: 1rem;
+        font-size: 2.4rem;
+      }
+
+      &:hover {
+        padding: 0.4rem;
+        background-color: $secondary-color;
+
+        p {
+          color: lighten(set_text_color($secondary-color), 50);
+        }
+        p > span {
+          color: set_text_color($secondary-color);
+        }
+      }
+    }
+  }
+}
+
+//media queries
+@include mediaMd {
+  //mixin.scss
+
+  main#contact .contact-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .box {
+      margin: 0 1rem;
+      font-size: 2.4rem;
+    }
+  }
+}
