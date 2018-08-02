@@ -45,6 +45,10 @@ module.exports = {
     ]
   },
   plugins: [
+    /*new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),*/
     new CopyWebpackPlugin([{ from: './src/html', to: './' }]),
     new ExtractTextPlugin('css/styles.min.css'),
     new webpack.LoaderOptionsPlugin({
