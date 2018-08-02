@@ -50,7 +50,10 @@ module.exports = {
       jQuery: 'jquery'
     }),*/
     new CopyWebpackPlugin([{ from: './src/html', to: './' }]),
-    new ExtractTextPlugin('css/styles.min.css'),
+    new ExtractTextPlugin({
+      filename: 'css/styles.min.css',
+      allChunks: true
+    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       options: {
