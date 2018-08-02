@@ -1,2 +1,15 @@
 main#home {
+  .lg-heading {
+    font-size: 4rem;
+  }
+}
+
+//media queries
+@include mediaMd {
+  //mixin.scss
+  main#home {
+    .lg-heading {
+      font-size: 6rem;
+    }
+  }
 }
