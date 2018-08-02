@@ -33,7 +33,6 @@ module.exports = {
         test: /\.(png|jpg|jpeg|svg)$/,
         use: [
           {
-            /*loader: 'file-loader?name=../img/[name].[ext]'*/
             loader: 'file-loader',
             options: {
               publicPath: '../img/',
