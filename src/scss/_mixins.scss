@@ -4,13 +4,13 @@
 
 //media mixins
 @mixin mediaXs {
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width: 480px) {
     @content;
   }
 }
 
 @mixin mediaSm {
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: 481px) {
     @content;
   }
 }
