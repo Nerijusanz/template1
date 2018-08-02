@@ -34,6 +34,7 @@ html {
 body {
   @include background;
   margin: 0;
+  padding: 0;
   height: 100%;
   background-color: $bg-color;
   color: set_text_color($bg-color);
@@ -42,7 +43,7 @@ body {
 main {
   //sticky footer
 
-  min-height: calc(100vh - 60px); //main height - footer height
+  min-height: calc(100vh - 5vh); //main height - footer height
 }
 
 #main-footer {
@@ -50,7 +51,7 @@ main {
   text-align: center;
   padding: 1rem;
   color: #fff;
-  height: 60px;
+  height: 5vh;
   background: darken($bg-color, 10);
 }
 

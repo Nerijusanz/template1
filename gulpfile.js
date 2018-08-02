@@ -6,7 +6,7 @@ var rename = require('gulp-rename');
 
 gulp.task('styles', function() {
   gulp
-    .src('./scss/styles.scss')
+    .src('./src/scss/styles.scss')
     .pipe(sourcemaps.init())
     .pipe(
       sass({
