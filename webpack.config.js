@@ -21,7 +21,10 @@ const autoprefixer = require('autoprefixer');
 //npm i -D copy-webpack-plugin
 
 module.exports = {
-  entry: ['./src/js/main.js'],
+  entry: [
+		'./src/js/main.js',
+		'./src/scss/styles.scss'
+	],
   output: {
     path: path.join(__dirname, '/build/'),
     filename: 'js/main.js'
